@@ -9,7 +9,7 @@ import java.util.ArrayList;
 public class Controller {
     
     public ArrayList<Player> getPlayers(Team team){
-        throw new UnsupportedOperationException();
+        team.
     }
 
     public Player getPlayer(Team team, String playername){
