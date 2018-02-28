@@ -31,7 +31,7 @@ public class ControllerTest {
         santaPlayers[6] = new Player("Thunder", 2012);
         santaPlayers[7] = new Player("Lightning", 2012);
         for(Player p : santaPlayers) { teamSanta.add(p); }
-        santaCoach = new Player("Rudolph", 2005);
+        santaCoach = new Player("Rudolph", 1998);
         teamSanta.setCoach(santaCoach);
         for(Player p : santaPlayers) { 
             for(int year = 2015; year <= 2018; year++){
