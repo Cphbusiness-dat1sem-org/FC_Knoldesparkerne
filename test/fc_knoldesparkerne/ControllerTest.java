@@ -62,15 +62,6 @@ public class ControllerTest {
         teams = new ArrayList<>();
         teams.add(teamSanta);
         teams.add(teamMonster);
-        
-        
-//        ArrayList<Player> allPlayers = new ArrayList();
-//        allPlayers.addAll(teamSanta.getPlayers());
-//        allPlayers.addAll(teamMonster.getPlayers());
-//        for(Player p : allPlayers){
-//            int age = 2018 - p.getBirthYear();
-//            System.out.println(String.format("%20s", p.getName()) + " - " + age);
-//        }
     }
 
     @Test
@@ -105,6 +96,8 @@ public class ControllerTest {
         assertTrue(c.isCoach(teams, santaCoach));
         assertFalse(c.isCoach(teams, monsterPlayers[3]));
         assertTrue(c.isCoach(teams, santaPlayers[3]));
+        assertTrue(c.isCoach(teams, new Player("Rudolph", 1998)));
+        assertTrue(c.isCoach(teams, new Player("Rudolph", 2015)));
     }
 
     @Test
@@ -124,13 +117,13 @@ public class ControllerTest {
 
     @Test
     public void testGetExpectedRevenue() {
-        assertEquals(4100, c.getExpectedRevenue(teamSanta, 2019));
-        assertEquals(3950, c.getExpectedRevenue(teamMonster, 2019));
+        assertEquals(4400, c.getExpectedRevenue(teamSanta, 2019));
+        assertEquals(4150, c.getExpectedRevenue(teamMonster, 2019));
     }
 
     @Test
     public void testMissingRevenue() {
-        assertEquals(1100, c.missingRevenue(teams, 2018));
-        assertEquals(7500, c.missingRevenue(teams, 2019));
+        assertEquals(1200, c.missingRevenue(teams, 2018));
+        assertEquals(8000, c.missingRevenue(teams, 2019));
     }
 }
